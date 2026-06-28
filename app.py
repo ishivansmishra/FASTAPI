@@ -1,12 +1,15 @@
-import time
-import asyncio
 from fastapi import FastAPI
 
 app = FastAPI()
 
 @app.get("/")
-async def home():
-    await asyncio.sleep(3)
+def home():
     return{
-        "message":"Async API"
+        "message":"HELLO Shivansh"
+    }
+
+@app.get("/add")
+def add(a:int, b:int):
+    return{
+        "result":a+b
     }
